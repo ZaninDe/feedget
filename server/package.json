@@ -15,6 +15,7 @@
     "buffer-from": "^1.1.2",
     "chokidar": "^3.5.3",
     "concat-map": "^0.0.1",
+    "cors": "^2.8.5",
     "create-require": "^1.1.1",
     "diff": "^4.0.2",
     "dynamic-dedupe": "^0.3.0",
@@ -60,6 +61,7 @@
   "devDependencies": {
     "@swc/core": "^1.2.183",
     "@swc/jest": "^0.2.21",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.5.1",
     "@types/node": "^17.0.31",

@@ -27,7 +27,7 @@ routes.post('/feedbacks', async (req, res) => {
     nodemailerMailAdapter
   )
 
-  submitFeedbacUseCase.execute({
+  await submitFeedbacUseCase.execute({
     type,
     comment,
     screenshot,

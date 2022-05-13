@@ -1,16 +1,54 @@
-import { SubmitFeedbackUseCase } from "./submit-feedback-use-case"
+import { SubmitFeedbackUseCase } from "./submit-feedback-use-case";
 
-describe('Submit feedback', () => {
-  it('shloud be able to submit a feedback', async () => {
-    const submitFeedback = new SubmitFeedbackUseCase(
-      { create: async () => { } },
-      { sendMail: async () => {} }
-    )
+const createFeedbackSpy = jest.fn();
+const sendMailSpy = jest.fn();
 
-    await expect(submitFeedback.execute({
-      type: 'BUG',
-      comment: 'example comment',
-      screenshot: 'test.jpg',
-    })).resolves.not.toThrow();
-  })
-})
+const submitFeedback = new SubmitFeedbackUseCase(
+  { create: createFeedbackSpy },
+  { sendMail: sendMailSpy }
+);
+
+describe("Submit feedback", () => {
+  it("shloud be able to submit a feedback", async () => {
+    await expect(
+      submitFeedback.execute({
+        type: "BUG",
+        comment: "example comment",
+        screenshot: "data:image/png;base64asdasdfasdfasdfasdf",
+      })
+    ).resolves.not.toThrow();
+
+    expect(createFeedbackSpy).toHaveBeenCalled();
+    expect(sendMailSpy).toHaveBeenCalled();
+  });
+
+  it("shloud not be able to submit a feedback without type", async () => {
+    await expect(
+      submitFeedback.execute({
+        type: "",
+        comment: "example comment",
+        screenshot: "data:image/png;base64asdasdfasdfasdfasdf",
+      })
+    ).rejects.toThrow();
+  });
+
+  it("shloud not be able to submit a feedback without comment", async () => {
+    await expect(
+      submitFeedback.execute({
+        type: "BUG",
+        comment: "",
+        screenshot: "data:image/png;base64asdasdfasdfasdfasdf",
+      })
+    ).rejects.toThrow();
+  });
+
+  it("shloud not be able to submit a feedback with an invalid screenshot", async () => {
+    await expect(
+      submitFeedback.execute({
+        type: "BUG",
+        comment: "example comment",
+        screenshot: "test.jpg",
+      })
+    ).rejects.toThrow();
+  });
+});

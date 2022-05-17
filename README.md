@@ -3,6 +3,8 @@
 </p>
 <p aling="center">
 
+# Feedget
+
 [![Author](https://img.shields.io/badge/author-ZaninDe-ff9000?style=flat-square)](https://github.com/ZaninDe)
 [![Languages](https://img.shields.io/github/languages/count/ZaninDe/feedget?color=%23ff9000&style=flat-square)](#)
 [![Stars](https://img.shields.io/github/stars/ZaninDe/feedget?color=ff9000&style=flat-square)](https://github.com/ZaninDe/feedget/stargazers)

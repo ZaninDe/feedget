@@ -1,5 +1,5 @@
 <p align="center" >
-    <img alt="folder" src="./.github/folder.png" width="600px">
+    <img alt="folder" src="./.github/folder.png" width="400">
 </p>
 <p aling="center">
 
@@ -18,9 +18,9 @@ Project developed with [Rocketseat](https://www.rocketseat.com.br/) in Next Leve
 
 # :camera: Screenshots
 <div align="center">
-   <img src="./.github/options.png" width="400px">
-   <img src="./.github/describeBug.png" width="357px">
-   <img src="./.github/successMessage.png" width="400px">
+   <img src="./.github/options.png" width="300">
+   <img src="./.github/describeBug.png" width="267px">
+   <img src="./.github/successMessage.png" width="300">
 </div>
 
 ## 🧪 Tech
